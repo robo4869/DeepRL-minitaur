@@ -1,10 +1,14 @@
 import numpy as np
-import tensorflow as tf
+# import tensorflow as tf
+try:
+  import tensorflow.compat.v1 as tf
+except exception:
+  import tensorflow as tf
 import tflearn
 
 from pybullet_envs.bullet import minitaur_gym_env
 from pybullet_envs.bullet import minitaur_env_randomizer
-from replay_buffer import ReplayBuffer
+from tf_agents.replay_buffers.replay_buffer import ReplayBuffer
 
 MAX_EPISODES = 1500
 MAX_EP_STEPS = 1000
